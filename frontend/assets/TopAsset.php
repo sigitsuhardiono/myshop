@@ -21,7 +21,7 @@ class TopAsset extends AssetBundle
         'dev/css/font-awesome.min.css',
         'dev/css/style.css',
         'dev/css/responsive.css',
-        'dev/css/theme/color-01.css',
+        'dev/css/theme/color-05.css',
     ];
     public $js = [
 		'dev/js/vendor/modernizr-2.8.3.min.js',
