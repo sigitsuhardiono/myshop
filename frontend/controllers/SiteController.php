@@ -13,6 +13,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
+use common\models\Barang;
+
 /**
  * Site controller
  */
@@ -72,7 +74,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+		$barang = new Barang();
+        $list_barang = $barang->GetNewProduk();
+        return $this->render('index',['list_barang'=>$list_barang]);
     }
 
     /**

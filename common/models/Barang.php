@@ -95,4 +95,18 @@ class Barang extends \yii\db\ActiveRecord
     {
         return new BarangQuery(get_called_class());
     }
+
+  
+    public static function GetNewProduk()
+    {
+        $data = Barang::find()->joinWith('idKategori')->limit(4,0)->all();
+        return $data;
+    }
+
+    public static function GetBarangByKategori()
+    {
+        $data = Barang::find()->joinWith('idKategori')->where(['=', 'kategori.nama', 'Baju Pria']);
+        return $data;
+    }
+
 }

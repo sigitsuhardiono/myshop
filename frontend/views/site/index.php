@@ -1,5 +1,5 @@
 <?php
-
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'My Shop';
@@ -181,172 +181,49 @@ $this->title = 'My Shop';
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2>
-                            New Products</h2>
+                            Produk Baru</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="product-curosel">
-                    <!-- single-product start -->
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="single-product.html">
-                                    <img class="primary-img" src="dev/img/product/1.jpg" alt="" />
-                                    <img class="secondary-img" src="dev/img/product/4.jpg" alt="" />
-                                </a><span class="sale">sale</span>
-                                <div class="product-action">
-                                    <div class="pro-button-top">
-                                        <a href="#">add to cart</a>
-                                    </div>
-                                    <div class="pro-button-bottom">
-                                        <a href="#"><i class="fa fa-heart"></i></a><a href="#"><i class="fa fa-retweet"></i>
-                                        </a><a href="#"><i class="fa fa-search-plus"></i></a>
+                    <?php foreach ($list_barang as $key_barang):?>
+                        <!-- single-product start -->
+                        <div class="col-lg-12">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="/barang/detail/<?php echo $key_barang->id;?>">
+                                        <img class="primary-img" src="dev/img/product/1.jpg" alt="" />
+                                        <img class="secondary-img" src="dev/img/product/4.jpg" alt="" />
+                                    </a><span class="sale">sale</span>
+                                    <div class="product-action">
+                                        <div class="pro-button-top">
+                                            <a href="#">add to cart</a>
+                                        </div>
+                                        <div class="pro-button-bottom">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>
-                                    <a href="single-product.html">Feugiat justo lacinia</a></h3>
-                                <div class="pro-price">
-                                    <span class="normal">$150</span> <span class="old">$180</span>
-                                </div>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                        class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="<?php echo Url::to(['/barang/detail/'.$key_barang->id]);?>"><?php echo $key_barang->nama;?></a></h3>
+                                    <div class="pro-price">
+                                        <span class="normal"><?php echo  number_format($key_barang->harga);?></span>
+                                    </div>
+                                     <h5>
+                                        <a href="/jenis/<?php echo $key_barang->idKategori->idJenis->id;?>"><?php echo $key_barang->idKategori->idJenis->nama;?></a>
+
+                                        <a href="<?php echo Url::to(['/kategori', 'nama' => $key_barang->idKategori->nama]);?>"><?php echo $key_barang->idKategori->nama;?></a>
+                                        </h5>
+                                    <div class="pro-rating">
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- single-product end -->
-                    <!-- single-product start -->
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="single-product.html">
-                                    <img class="primary-img" src="dev/img/product/2.jpg" alt="" />
-                                    <img class="secondary-img" src="dev/img/product/14.jpg" alt="" />
-                                </a>
-                                <div class="product-action">
-                                    <div class="pro-button-top">
-                                        <a href="#">add to cart</a>
-                                    </div>
-                                    <div class="pro-button-bottom">
-                                        <a href="#"><i class="fa fa-heart"></i></a><a href="#"><i class="fa fa-retweet"></i>
-                                        </a><a href="#"><i class="fa fa-search-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>
-                                    <a href="single-product.html">Feugiat justo lacinia</a></h3>
-                                <div class="pro-price">
-                                    <span class="normal">$150</span> <span class="old">$180</span>
-                                </div>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-product end -->
-                    <!-- single-product start -->
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="single-product.html">
-                                    <img class="primary-img" src="dev/img/product/3.jpg" alt="" />
-                                    <img class="secondary-img" src="dev/img/product/12.jpg" alt="" />
-                                </a><span class="sale">sale</span>
-                                <div class="product-action">
-                                    <div class="pro-button-top">
-                                        <a href="#">add to cart</a>
-                                    </div>
-                                    <div class="pro-button-bottom">
-                                        <a href="#"><i class="fa fa-heart"></i></a><a href="#"><i class="fa fa-retweet"></i>
-                                        </a><a href="#"><i class="fa fa-search-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>
-                                    <a href="single-product.html">Feugiat justo lacinia</a></h3>
-                                <div class="pro-price">
-                                    <span class="normal">$150</span> <span class="old">$180</span>
-                                </div>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-product end -->
-                    <!-- single-product start -->
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="single-product.html">
-                                    <img class="primary-img" src="dev/img/product/5.jpg" alt="" />
-                                    <img class="secondary-img" src="dev/img/product/6.jpg" alt="" />
-                                </a><span class="sale">sale</span>
-                                <div class="product-action">
-                                    <div class="pro-button-top">
-                                        <a href="#">add to cart</a>
-                                    </div>
-                                    <div class="pro-button-bottom">
-                                        <a href="#"><i class="fa fa-heart"></i></a><a href="#"><i class="fa fa-retweet"></i>
-                                        </a><a href="#"><i class="fa fa-search-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>
-                                    <a href="single-product.html">Feugiat justo lacinia</a></h3>
-                                <div class="pro-price">
-                                    <span class="normal">$150</span> <span class="old">$180</span>
-                                </div>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-product end -->
-                    <!-- single-product start -->
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="single-product.html">
-                                    <img class="primary-img" src="dev/img/product/7.jpg" alt="" />
-                                    <img class="secondary-img" src="dev/img/product/8.jpg" alt="" />
-                                </a>
-                                <div class="product-action">
-                                    <div class="pro-button-top">
-                                        <a href="#">add to cart</a>
-                                    </div>
-                                    <div class="pro-button-bottom">
-                                        <a href="#"><i class="fa fa-heart"></i></a><a href="#"><i class="fa fa-retweet"></i>
-                                        </a><a href="#"><i class="fa fa-search-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>
-                                    <a href="single-product.html">Feugiat justo lacinia</a></h3>
-                                <div class="pro-price">
-                                    <span class="normal">$150</span> <span class="old">$180</span>
-                                </div>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-product end -->
+                        <!-- single-product end -->
+                    <?php endforeach;?>
                 </div>
             </div>
         </div>

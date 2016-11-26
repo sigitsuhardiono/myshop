@@ -3,7 +3,7 @@
 namespace common\models;
 
 use Yii;
-
+use yii\data\Pagination;
 /**
  * This is the model class for table "kategori".
  *
@@ -80,4 +80,5 @@ class Kategori extends \yii\db\ActiveRecord
     {
         return new KategoriQuery(get_called_class());
     }
+
 }

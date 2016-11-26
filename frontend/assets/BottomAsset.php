@@ -27,7 +27,7 @@ class BottomAsset extends AssetBundle
 		'dev/js/main.js',
 		'dev/js/jquery.cookie.js',
     ];
-	public $jsOptions = array(
-        'position' => \yii\web\View::POS_END
-    );
+	public $depends = [
+        'frontend\assets\TopAsset'
+    ];
 }

@@ -7,10 +7,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\TopAsset;
+use frontend\assets\BottomAsset;
 use common\widgets\Alert;
 
-TopAsset::register($this);
+BottomAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
@@ -24,51 +24,15 @@ TopAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="dev/img/favicon.ico">
-    <!-- google fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300' rel='stylesheet'
-        type='text/css'>
     <!-- all css here -->
 	<?php $this->head() ?>
 </head>
-<body class="home-1">
+<body>
 <?php $this->beginBody() ?>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <!-- Add your site or application content here -->
-    <!-- header-top-area start -->
-    <div class="header-top-area hidden-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-4">
-                    <div class="welcome">
-                        <span class="phone">Phone: +12345 67890</span> <span class="hidden-sm">/</span>
-                        <span class="email hidden-sm">Email: yourname@domain.com</span>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-8">
-                    <div class="top-menu">
-                        <ul id="currency">
-                            <li><a href="#">USD <i class="fa fa-angle-down"></i></a>
-                                <ul>
-                                    <li><a href="#">EURO</a></li>
-                                    <li><a href="#">AUD</a></li>
-                                    <li><a href="#">Rs</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Wishlist</a></li>
-                            <li><a href="#">Shopping cart</a></li>
-                            <li><a href="#">Checkout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- header-top-area end -->
     <div class="sticky-wrapper">
         <header>			
 			<!-- header-bottom-area start -->            
@@ -77,7 +41,7 @@ TopAsset::register($this);
 					<div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 							<div class="logo">
-								<a href="index.html"><span>e</span> Online Shop</a>
+								<a href="/"><span>e</span> Online Shop</a>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-5 col-sm-5 col-xs-6 hidden-xs">
@@ -396,10 +360,6 @@ TopAsset::register($this);
 		</footer>
     <!-- footer end -->
     <!-- all js here -->
-	<?php 
-	use frontend\assets\BottomAsset;
-	BottomAsset::register($this);
-	?>
 <?php $this->endBody() ?>   
 </body>
 
